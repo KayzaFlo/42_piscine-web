@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>balloon</title>
+	<style>
+		#balloon {
+			background-color: red;
+			width: 200px;
+			height: 200px;
+			border-radius: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div id="balloon"></div>
+	<script>
+		var	diam = 200
+		var color = "#FF0000";
+
+		balloon.addEventListener("click", () => {
+			if (diam >= 420)
+				diam = 200;
+			else
+				diam += 10;
+			if (color == "#FF0000")
+				color = "#00FF00";
+			else if (color == "#00FF00")
+				color = "#0000FF";
+			else
+				color = "#FF0000";
+			updateBalloon();
+		});
+		balloon.addEventListener("mouseleave", () => {
+			if (diam > 200)
+				diam -= 5;
+			if (color == "#FF0000")
+				color = "#0000FF";
+			else if (color == "#00FF00")
+				color = "#FF0000";
+			else
+				color = "#00FF00";
+			updateBalloon();
+		});
+
+		function updateBalloon() {
+			balloon.style.width = diam + 'px';
+			balloon.style.height = diam + 'px';
+			balloon.style.backgroundColor = color;
+		}
+	</script>
+</body>
+</html>

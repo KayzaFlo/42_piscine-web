@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>balloon jquery</title>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"
+	integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+	crossorigin="anonymous"></script>
+</head>
+<body>
+	<div id="balloon" style="background-color: red; width: 200px; height: 200px; border-radius: 100%;"></div>
+	<script>
+		var	diam = 200
+		var color = "#FF0000";
+
+		$("#balloon").click(function() {
+			if (diam >= 420)
+				diam = 200;
+			else
+				diam += 10;
+			if (color == "#FF0000")
+				color = "#00FF00";
+			else if (color == "#00FF00")
+				color = "#0000FF";
+			else
+				color = "#FF0000";
+			updateBalloon();
+		});
+		$("#balloon").mouseleave(function() {
+			if (diam > 200)
+				diam -= 5;
+			if (color == "#FF0000")
+				color = "#0000FF";
+			else if (color == "#00FF00")
+				color = "#FF0000";
+			else
+				color = "#00FF00";
+			updateBalloon();
+		});
+
+		function updateBalloon() {
+			// $("#balloon").css('width', diam + 'px');
+			$("#balloon").animate({
+				'width': diam + 'px',
+				'height': diam + 'px'
+			}, 100);
+			$("#balloon").css('background-color', color);
+		}
+	</script>
+</body>
+</html>

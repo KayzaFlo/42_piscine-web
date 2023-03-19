@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>calc jquery</title>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"
+	integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+	crossorigin="anonymous"></script>
+</head>
+<body>
+	<div id="balloon"></div>
+	<input type="text" id="a">
+	<select id="select">
+		<option value="add">+</option>
+		<option value="sub">-</option>
+		<option value="div">/</option>
+		<option value="mult">*</option>
+		<option value="mod">%</option>
+	</select>
+	<input type="text" id="b">
+	<input type="submit" id="submit" value="Try me!">
+	<script>
+		var result;
+
+		function logSubmit(event) {
+			if (parseInt($("#a").val()) < 0 || parseInt($("#b").val()) < 0) {
+				result = ("Error :(");
+			}
+			else if (select.value == "add") {
+				result = (parseInt($("#a").val()) + parseInt($("#b").val()));
+			}
+			else if (select.value == "sub") {
+				result = (parseInt($("#a").val()) - parseInt($("#b").val()));
+			}
+			else if (select.value == "div") {
+				if (parseInt($("#b").val()) == 0)
+					result = ("It’s over 9000");
+				else
+					result = (parseInt($("#a").val()) / parseInt($("#b").val()));
+			}
+			else if (select.value == "mult") {
+				result = (parseInt($("#a").val()) * parseInt($("#b").val()));
+			}
+			else if (select.value == "mod") {
+				if (parseInt($("#b").val()) == 0)
+					result = ("It’s over 9000");
+				else
+					result = (parseInt($("#a").val()) % parseInt($("#b").val()));
+			}
+			console.log(result);
+			alert(result);
+			event.preventDefault();
+		}
+
+		function useMe() {
+			console.warn("Please, use me...");
+			alert("Please, use me...");
+		}
+
+		$("#submit").click(logSubmit);
+		window.setInterval(useMe, 30000);
+	</script>
+</body>
+</html>

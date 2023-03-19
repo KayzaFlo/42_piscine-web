@@ -1,0 +1,36 @@
+body {
+	margin: 0px;
+	background-color: black;
+}
+
+.section {
+	filter: grayscale(1);
+	height: 100vh;
+	width: 100vi;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-attachment: fixed;
+	background-repeat: repeat;
+}
+
+h1 {
+	color: white;
+	text-align: center;
+}
+
+.static {
+	background: black;
+}
+
+.bg1 {
+	background-color: blue;
+	background-image: url('https://42quebec.com/wp-content/uploads/2021/11/42-quebec-tout-savoir-blog-1.png');
+}
+
+.bg2 {
+	background-color: red;
+	background-image: url('https://images.omerlocdn.com/resize?url=https%3A%2F%2Fgcm.omerlocdn.com%2Fproduction%2Fglobal%2Ffiles%2Fimage%2Fe162c732-e3a1-4c4c-bf54-2d626a0b3136.jpg&width=1200&type=jpeg&stripmeta=true');
+}
+
+/* https://alvarotrigo.com/blog/how-to-create-a-parallax-effect-with-css-only/ */

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>calc</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<div id="balloon"></div>
+	<input type="text" id="a">
+	<select id="select">
+		<option value="add">+</option>
+		<option value="sub">-</option>
+		<option value="div">/</option>
+		<option value="mult">*</option>
+		<option value="mod">%</option>
+	</select>
+	<input type="text" id="b">
+	<input type="submit" id="submit" value="Try me!">
+	<script>
+		var result;
+
+		function logSubmit(event) {
+			if (parseInt(a.value) < 0 || parseInt(b.value) < 0) {
+				result = ("Error :(");
+			}
+			else if (select.value == "add") {
+				result = (parseInt(a.value) + parseInt(b.value));
+			}
+			else if (select.value == "sub") {
+				result = (parseInt(a.value) - parseInt(b.value));
+			}
+			else if (select.value == "div") {
+				if (parseInt(b.value) == 0)
+					result = ("It’s over 9000");
+				else
+					result = (parseInt(a.value) / parseInt(b.value));
+			}
+			else if (select.value == "mult") {
+				result = (parseInt(a.value) * parseInt(b.value));
+			}
+			else if (select.value == "mod") {
+				if (parseInt(b.value) == 0)
+					result = ("It’s over 9000");
+				else
+					result = (parseInt(a.value) % parseInt(b.value));
+			}
+			console.log(result);
+			alert(result);
+			event.preventDefault();
+		}
+
+		function useMe() {
+			console.warn("Please, use me...");
+			alert("Please, use me...");
+		}
+
+		submit.addEventListener("click", logSubmit);
+		window.setInterval(useMe, 30000);
+	</script>
+</body>
+</html>
